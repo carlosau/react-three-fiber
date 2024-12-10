@@ -1,6 +1,8 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useRef } from 'react';
 import { OrbitControls } from '@react-three/drei';
+import { Image } from '@react-three/drei';
+
 
 function AnimatedBox() {
   const boxRef = useRef()
@@ -10,12 +12,13 @@ function AnimatedBox() {
     boxRef.current.rotation.y += 0.005;
     boxRef.current.rotation.z += 0.005;
   })
+    
 
   return(
-    <mesh ref={boxRef}>
-      <boxGeometry args={[2.5, 2, 2.5]} />
-      <meshStandardMaterial color="blue" />
-    </mesh>
+   
+    <Image ref={boxRef} url='../public/logo-confsistemas-2025-us.png'>
+      <boxGeometry args={[2, 2, 2]} />
+    </Image>
   )
 }
 
@@ -25,7 +28,6 @@ function App() {
       <Canvas>
         <OrbitControls />
         <AnimatedBox />
-        <directionalLight position={[2, 5, 1]} />
       </Canvas>
     </div>
   )
