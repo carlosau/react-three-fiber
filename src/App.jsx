@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useRef } from 'react';
-import { FirstPersonControls } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 
 function AnimatedBox() {
   const boxRef = useRef()
@@ -23,7 +23,7 @@ function App() {
   return (
     <div id='canvas-container'>
       <Canvas>
-        <FirstPersonControls />
+        <OrbitControls />
         <AnimatedBox />
         <directionalLight position={[2, 5, 1]} />
       </Canvas>
